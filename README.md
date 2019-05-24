@@ -31,3 +31,29 @@
 * 四舍五入函数round在math.h中，sqrt和pow也在math.h中，max，min在algorithm中
 * 四舍五入也可用` printf("%d\n",int(re+0.5));`
 
+### B1070
+
+* 排序加贪心
+
+* ```c++
+  for(int i=0;i<n-1;i++){
+          double temp=(c[i]+c[i+1])/2;
+          c[i+1]=temp;
+  }
+  ```
+
+  可改成
+
+  ```c++
+  int result = v[0];
+      for (int i = 1; i < n; i++)
+          result = (result + v[i]) / 2;
+  ```
+
+* 向下取整用floor()
+
+### B1087
+
+* 利用set的去重性，一开始没想到，想找规律，这条路行不通就模拟从1到n的过程，将生成的结果放到set中
+* 复习了set的insert用法
+* 向下取整，整数除法自动向下取整
