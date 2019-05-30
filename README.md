@@ -70,3 +70,14 @@
 * `memset(a,0,sizeof(a))`头文件cstring
 * 注意迭代n-1次
 * 我用的是三个vector做的很烦，柳神用两个字符串就解决了，转化为字符串拼接问题
+
+### B1093
+
+* 字符是ASCII码，可直接当作整数用
+* 两个字符串可拼接后使用
+
+### B1091
+
+* 阶乘时注意谨慎使用pow()，`int n=pow(5,2)`结果n等于24，换成double即可
+* `string c = a.substr(a.length() - b.length());`截取a的后x位，x为b的位数，即看a后几位是否和b相同，可以转化为字符串问题。
+* to_string的使用
