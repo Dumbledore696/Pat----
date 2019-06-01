@@ -81,3 +81,9 @@
 * 阶乘时注意谨慎使用pow()，`int n=pow(5,2)`结果n等于24，换成double即可
 * `string c = a.substr(a.length() - b.length());`截取a的后x位，x为b的位数，即看a后几位是否和b相同，可以转化为字符串问题。
 * to_string的使用
+
+### B1072
+
+* 输出编号时注意%04d格式
+* map用不了find，set有find
+
