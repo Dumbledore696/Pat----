@@ -3,6 +3,7 @@
 #include<string>
 #include<vector>
 #include<algorithm>
+#include<cmath>
 using namespace std;
 struct Stu{
     int score;
@@ -28,30 +29,53 @@ int main() {
             que[i].answer+=ch;
         }
     }
+	int maxerror=-1;
+	for(int i=0;i<m;i++)que[i].errornum=0;
+
     for(int i=0;i<n;i++){
         stud[i].score=0;
+		scanf("\n");
         for(int j=0;j<m;j++){
-            que[i].errornum=0;
+            
             int num;
             string ans;
             scanf("(%d ",&num);
             for(int m=0;m<num;m++){
-                string ans_single;
-                cin>>ans_single;
+                char ans_single;
+                //cin>>ans_single;
+				scanf(" %c",&ans_single);
                 ans+=ans_single;
-                if(ans==que[i].answer){
-                    stud[i].score+=que[i].score;
-                }
-                else{
-                    que[j].errornum++;
-                }
+                
             }
-            scanf(")");
+			scanf(")");
+			if(j<m-1)scanf(" ");
+			if(ans==que[j].answer){
+                stud[i].score+=que[j].score;
+            }
+            else{
+                que[j].errornum++;
+				maxerror=max(que[j].errornum,maxerror);
+            }
+            
         }
     }
+	vector<int> v;
     for(int i=0;i<n;i++){
         cout<<stud[i].score<<endl;
     }
-
+	if(maxerror==-1){
+		cout<<"Too simple"<<endl;
+	}
+	else{
+		cout<<maxerror<<' ';
+		for(int i=0;i<m;i++){
+			if(que[i].errornum==maxerror)v.push_back(i+1);
+		}
+		for(int i=0;i<v.size();i++){
+			cout<<v[i];
+			if(i<v.size()-1)cout<<' ';
+			else cout<<'\n';
+		}
+	}
     return 0;
 }
