@@ -12,7 +12,7 @@ struct node{
 node* newnode(int x){
 	node* root=new node;
 	root->data=x;
-	root->height=0;
+	root->height=1;
 	root->lchild=NULL;
 	root->rchild=NULL;
 	return root;
