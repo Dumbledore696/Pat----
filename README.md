@@ -172,3 +172,17 @@
 
 * 涉及二叉排序树的操作，包括插入，建树，先序遍历，后序遍历
 * 本题镜像树可以通过翻转树实现，也可通过遍历时反向遍历实现
+
+### A1066 平衡二叉树
+
+* 注意newnode时，将高度置为1，root=NULL时，高度才为0；
+
+* RR和RL型，根节点的平衡因子为-2
+
+* 编写的函数有：
+
+  | newnode          | getheight    | create  |
+  | :--------------- | ------------ | ------- |
+  | getbalancefactor | updateheight | Rrotate |
+  | Lrotate          | insert       |         |
+
