@@ -186,3 +186,17 @@
   | getbalancefactor | updateheight | Rrotate |
   | Lrotate          | insert       |         |
 
+### 并查集
+
+* 编写的函数有
+
+  | initial | find_Father | union |
+  | ------- | ----------- | ----- |
+  |         |             |       |
+
+### 堆排序
+
+* 建堆：向上执行，向下调整  downadjust、createHeap
+* 删除堆顶：向下调整 downAdjust、deleteTop
+* 插入数据：向上调整 upAdjust、insert
+* 堆排序=建堆+向下调整 createHeap、downAdjust
