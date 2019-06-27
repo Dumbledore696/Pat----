@@ -208,3 +208,15 @@
 * DFS过程中求每个连通分量的边权值总和（先判断能不能到达，加上之后，再将边置为0，再判断点是否访问再DFS下个顶点）、总人数、点权值最大的那个顶点。
 * 输出按字母顺序，用map
 
+### A1076 图的BFS
+
+* 注意邻接表结构的指向，由被关注的人指向转发的人
+
+* memset用法，加cstring头文件，`memset(inq,false,sizeof(inq))`
+
+* 注意每次BFS前inq[maxn]要初始化
+
+* 本题为带layer的BFS，`vector<Node> adj[maxn]` 
+
+  `struct Node{int v,int layer};`
+
