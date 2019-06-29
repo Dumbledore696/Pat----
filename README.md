@@ -220,3 +220,9 @@
 
   `struct Node{int v,int layer};`
 
+### A1003 单源最短路径Dijkstra
+
+* 注意将`G[maxn][maxn]`初始化`fill(G[0],G[0]+maxn*maxn,INF)`
+* 求点权最大的最短路径，`w[s]=weight[s],其他的为0`
+* 求最短路径的条数 `num[s]=1,其他的为0`
+
