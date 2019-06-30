@@ -226,3 +226,8 @@
 * 求点权最大的最短路径，`w[s]=weight[s],其他的为0`
 * 求最短路径的条数 `num[s]=1,其他的为0`
 
+### A1030 Dijkstra+DFS模板
+
+* 注意v.pop_back()，括号中为空
+* 用`vector<int> pre[maxn]`通过Dijkstra的求解记录所有最短路径，再用DFS遍历所有最短路径，找出使第二标尺最优的路径
+
