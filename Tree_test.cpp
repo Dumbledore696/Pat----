@@ -4,6 +4,7 @@
 #include<algorithm>
 using namespace std;
 
+int num=1;
 int n=5;
 
 typedef struct BTNode{
@@ -33,7 +34,7 @@ BTNode *createTree(int A[]){
 	}
 	return root;
 }
-void countdouble(BTNode *bt,int &num){
+void countdouble(BTNode *bt,int &num){//求二叉树中的双孩子节点
 	if(bt==NULL)return;
 	if(bt->lchild!=NULL&&bt->rchild!=NULL){
 		num++;
@@ -41,13 +42,14 @@ void countdouble(BTNode *bt,int &num){
 	countdouble(bt->lchild,num);
 	countdouble(bt->rchild,num);
 }
-void FindK(BTNode *bt,int k){
+void FindK(BTNode *bt,int k){//查找树中第k个节点
 	if(bt==NULL)return;
 	if(num==k)cout<<bt->data<<endl;
-	FindK(bt->lchild);
-	FindK(bt->rchild);
+	num++;
+	FindK(bt->lchild,k);
+	FindK(bt->rchild,k);
 }
-void postordernorecursion(BTNode *bt){
+void postordernorecursion(BTNode *bt){//二叉树后序非递归遍历
 	stack<BTNode *>s;
 	BTNode *r=NULL;
 	BTNode *p=bt;
@@ -72,7 +74,8 @@ void postordernorecursion(BTNode *bt){
 	}
 }
 
-void printancestorpath(BTNode *bt,int k){//在出栈时判断是否为k，只要写一次判断，
+void printancestorpath(BTNode *bt,int k){//打印k的所有祖先
+	                                     //在出栈时判断是否为k，只要写一次判断，
                                          //但要先将自己出栈才能打印路径
 										 //在入栈时判断要写两次判断
 	stack<BTNode *>s;
@@ -109,7 +112,9 @@ void printancestorpath(BTNode *bt,int k){//在出栈时判断是否为k，只要
 	}
 }
 
-void nearestcommonancestor(BTNode *bt,int k,int q){//在出栈时判断是否为p或k，这样k一定在q前面，而入栈时不一定
+void nearestcommonancestor(BTNode *bt,int k,int q){//找到两个节点最近的公共祖先节点
+	                                               //在出栈时判断是否为p或k，
+                                                   //这样k一定在q前面，而入栈时不一定
 	BTNode* s[10];
 	BTNode* s1[10];
 	int top=-1;
@@ -153,8 +158,11 @@ void nearestcommonancestor(BTNode *bt,int k,int q){//在出栈时判断是否为
 	}
 }
 int main(){
-	int A[5]={3,1,4,2,5};
+	int A[5]={4,2,5,1,3};
 	BTNode *root=createTree(A);
-	nearestcommonancestor()
+	//FindK(root,5);
+	//postordernorecursion(root);
+	printancestorpath(root,3);
+	//nearestcommonancestor(root,1,2);
 	return 0;
 }
